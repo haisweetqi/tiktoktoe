@@ -25,9 +25,12 @@ const Game = () => {
   return (
     <div>
       <Board cells={board} onClick={handleClick}></Board>
-      {winner ? `Winner is  ${xIsNext ? "X" : "0"}` : ""}
 
-      {winner ? <button onClick={handleRestart}>Restart</button> : ""}
+      <div className="notify">{winner ? `Winner: ${winner}` : ""}</div>
+
+      <button className="btn" onClick={handleRestart}>
+        Restart
+      </button>
     </div>
   );
 };
